@@ -15,8 +15,8 @@ CPP_PLATFORM = Gcc
 UNITY_BUILD_HOME = unity.framework/extras/fixture/build
 
 UNITY_CFLAGS += -DUNITY_OUTPUT_CHAR=UnityOutputCharSpy_OutputChar
-UNITY_WARNINGFLAGS = -Wall -Werror -Wswitch-default
-#UNITY_WARNINGFLAGS += -Wshadow 
+UNITY_WARNINGFLAGS = -Wall -Werror -Wswitch-default -Wno-suggest-override
+#UNITY_WARNINGFLAGS += -Wshadow
 
 SRC_DIRS = \
 	$(PROJECT_HOME_DIR)/src/LedDriver \
@@ -44,6 +44,5 @@ INCLUDE_DIRS =\
   $(PROJECT_HOME_DIR)/include/LedDriver\
   $(PROJECT_HOME_DIR)/include/util\
   $(PROJECT_HOME_DIR)/mocks\
-  
-include $(UNITY_BUILD_HOME)/MakefileWorker.mk
 
+include $(UNITY_BUILD_HOME)/MakefileWorker.mk

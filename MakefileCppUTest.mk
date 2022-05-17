@@ -34,7 +34,7 @@ TEST_SRC_DIRS = \
 	tests\
 	tests/MyOS\
 
-	
+
 INCLUDE_DIRS =\
   .\
   $(CPPUTEST_HOME)/include\
@@ -49,15 +49,15 @@ INCLUDE_DIRS =\
 
 MOCKS_SRC_DIRS = \
 	mocks\
-	
-CPPUTEST_WARNINGFLAGS = -Wall -Wswitch-default -Werror 
-#CPPUTEST_CFLAGS = -std=c89 
+
+CPPUTEST_WARNINGFLAGS = -Wall -Wswitch-default -Werror -Wno-suggest-override
+#CPPUTEST_CFLAGS = -std=c89
 CPPUTEST_CFLAGS += -Wall -Wstrict-prototypes -pedantic
 LD_LIBRARIES = -lpthread
-	
-  
+
+
 ifeq ($(CPPUTEST_HOME),)
 $(info CPPUTEST_HOME not set! See README.txt)
-else  
+else
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 endif

@@ -1,9 +1,9 @@
 /***
  * Excerpted from "Test-Driven Development for Embedded C",
  * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
+ * Copyrights apply to this code. It may not be used to create training material,
  * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
+ * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/jgade for more book information.
 ***/
 /*- ------------------------------------------------------------------ -*/
@@ -45,8 +45,10 @@ void TimeService_Destroy(void)
 
 void FakeTimeService_MinuteIsUp(void)
 {
-    if (callback != NULL);
+    if (callback != NULL)
+    {
         callback();
+    }
 }
 
 void TimeService_SetPeriodicAlarmInSeconds(int seconds, WakeUpCallback cb)
@@ -90,4 +92,3 @@ int FakeTimeSource_GetAlarmPeriod(void)
 {
     return period;
 }
-

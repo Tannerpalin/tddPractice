@@ -4,7 +4,7 @@ SILENCE = @
 COMPONENT_NAME = t3
 TARGET_LIB = \
 	lib/lib$(COMPONENT_NAME).a
-	
+
 TEST_TARGET = \
 	$(COMPONENT_NAME)_tests
 
@@ -13,14 +13,15 @@ PROJECT_HOME_DIR = .
 CPP_PLATFORM = Gcc
 
 CPPUTEST_USE_EXTENSIONS = Y
-CPPUTEST_WARNINGFLAGS += -Wall 
-CPPUTEST_WARNINGFLAGS += -Werror 
-CPPUTEST_WARNINGFLAGS += -Wswitch-default 
-CPPUTEST_WARNINGFLAGS += -Wswitch-enum  
+CPPUTEST_WARNINGFLAGS += -Wall
+CPPUTEST_WARNINGFLAGS += -Werror
+CPPUTEST_WARNINGFLAGS += -Wswitch-default
+CPPUTEST_WARNINGFLAGS += -Wswitch-enum
 CPPUTEST_WARNINGFLAGS += -Wno-self-assign
+CPPUTEST_WARNINGFLAGS += -Wno-suggest-override
 CPPUTEST_CFLAGS += -std=c89
-CPPUTEST_CFLAGS += -Wextra 
-CPPUTEST_CFLAGS += -pedantic 
+CPPUTEST_CFLAGS += -Wextra
+CPPUTEST_CFLAGS += -pedantic
 CPPUTEST_CFLAGS += -Wstrict-prototypes
 
 SRC_DIRS = \
@@ -32,7 +33,7 @@ TEST_SRC_DIRS = \
 	tests/devices \
 	tests/HomeAutomation\
 	mocks
-	
+
 INCLUDE_DIRS =\
   $(CPPUTEST_HOME)/include/\
   include/*\
@@ -40,6 +41,6 @@ INCLUDE_DIRS =\
 
 ifeq ($(CPPUTEST_HOME),)
 $(info CPPUTEST_HOME not set! See README.txt)
-else  
+else
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 endif
